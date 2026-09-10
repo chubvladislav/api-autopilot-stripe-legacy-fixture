@@ -4,6 +4,8 @@ This public repository is intentionally outdated and exists only for testing API
 
 `LegacyChargeLookup` reads `PaymentIntent.charges`, which was removed from Stripe API responses in version `2022-11-15`. The intended migration target is `PaymentIntent.latest_charge` while preserving the function contract: return the last charge ID or `null`.
 
+The `fetchLastChargeId` example pins the request to Stripe API `2022-08-01`, so API Autopilot can classify the usage as an upgrade candidate without relying on account-level configuration.
+
 ## Baseline
 
 ```bash
